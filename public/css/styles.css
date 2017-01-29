@@ -35,12 +35,9 @@ body {
   margin-bottom: : 30px;
 }
 
-#progress-bar {
-  margin-top: : 30px;
-}
 
 h4 {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   color: #B8BDC1;
 }
 
@@ -51,6 +48,11 @@ h4 {
 
 h2 {
   margin-top: 15px;
+  color: #68757E;
+}
+
+h3 {
+  margin-top: 10px;
   color: #68757E;
 }
 
@@ -71,3 +73,13 @@ h2 {
     width: 450px;
   }
 }
+
+
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-right: 10px;
+}​
+
+

@@ -59,6 +59,7 @@ app.post('/upload_model', function(req, res){
 
   // create an incoming form object
   var form = new formidable.IncomingForm();
+  
 
   // specify that we want to allow the user to upload multiple files in a single request
   form.multiples = true;
@@ -85,6 +86,18 @@ app.post('/upload_model', function(req, res){
     form.on('file', function(field, file) {
       var ext = file.name.split('.').pop();
       fs.rename(file.path, path.join(form.uploadDir, 'Glasses.'+ext));
+    });
+
+    form.on('field', function(field, value){
+
+    if(field=='infoJsonString'){
+
+        fs.writeFile(path.join(form.uploadDir,'info.json'), value, function(error) {
+             if (error) {
+               console.error("write error:  " + error.message);
+             } 
+        });
+    }
     });
 
     // log any errors that occur

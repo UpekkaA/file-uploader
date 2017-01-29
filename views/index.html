@@ -28,8 +28,19 @@
               <h3>Select Model</h3>
               <input class="btn btn-lg" id="upload-input-model" type="file" name="uploads-model[]" accept=".fbx,.obj"></br>             
             </div>
+            <div class = "fieldwrapper">
+              <h3>Add Model Information</h3>
+              <label>Distance:</label><input  id="distance" type="number" placeholder="0" value=0></br>
+              <label>x:</label><input  id="x" type="number" placeholder="0" value=0></br>
+              <label>y:</label><input  id="y" type="number" placeholder="0" value=0></br>
+              <label>z:</label><input  id="z" type="number" placeholder="0" value=0></br>
+
+              <label>Rotation x:</label><input  id="Rotx" type="number" placeholder="0" value=0></br>
+              <label>Rotation y:</label><input  id="Roty" type="number" placeholder="0" value=0></br>
+              <label>Rotation z:</label><input  id="Rotz" type="number" placeholder="0" value=0></br>
+            </div>
             <div>
-            <button class="btn btn-lg upload-btn" type="button">Upload</button>
+              <button class="btn btn-lg upload-btn" type="button">Upload</button>
             </div>
             <div class="progress">
                 <div id=progress-bar class="progress-bar" role="progressbar"></div>

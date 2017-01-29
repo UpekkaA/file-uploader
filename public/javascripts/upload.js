@@ -3,6 +3,21 @@ $('.upload-btn').on('click', function (){
     $('#progress-bar').text('0%');
     $('#progress-bar').width('0%');
 
+  //var o = {"items":[]}; // create an object with key items to hold array
+      var obj = {
+        distance :  parseFloat($('#distance').val()), // place the url in a new object
+        x : parseFloat($('#x').val()), // place the name in a new object
+        y : parseFloat($('#y').val()), 
+        z : parseFloat($('#z').val()), 
+        Rotx : parseFloat($('#Rotx').val()), // place the name in a new object
+        Roty : parseFloat($('#Roty').val()), 
+        Rotz : parseFloat($('#Rotz').val())
+      };
+      
+    // strigify data to JSON format
+    var infoJsonString = JSON.stringify(obj, undefined, '\t');
+    console.log(infoJsonString);
+
   var files_image = $('#upload-input-image').get(0).files;
   var files_model = $('#upload-input-model').get(0).files;
 
@@ -27,6 +42,8 @@ $('.upload-btn').on('click', function (){
       // add the files to formData object for the data payload
       formData_model.append('uploads-model[]', file_model, file_model.name);
     }
+
+    formData_model.append('infoJsonString',infoJsonString);
 
     $.ajax({
       url: '/upload_image',
@@ -104,6 +121,17 @@ $('.upload-btn').on('click', function (){
       }
     });
 
+    /*$.ajax({
+      url: '/upload_info',
+      type: 'POST',
+      data: infoJsonString,
+      dataType: "json"
+  
+    });*/
+
   }
 });
+
+
+    
 
